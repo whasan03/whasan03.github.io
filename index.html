@@ -101,12 +101,6 @@
   }
   .intro p{color:var(--muted); max-width:560px; margin-bottom:14px;}
   .intro .lede{color:var(--text); font-size:16.5px;}
-  #typing{color:var(--accent);}
-  #typing::after{
-    content:'|';
-    animation:blink 1s step-start infinite;
-  }
-  @keyframes blink{50%{opacity:0;}}
 
   .work-item{
     padding:28px 0;
@@ -188,17 +182,18 @@
     <div class="sidebar-foot">
       <a href="https://github.com/whasan03" target="_blank" rel="noopener">GitHub</a>
       <a href="#" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="mailto:youremail@example.com">Email</a>
+      <a href="mailto:wallyhasan03@gmail.com">Email</a>
     </div>
   </aside>
 
   <main>
     <section id="about" class="intro reveal">
-      <div class="kicker">About</div>
-      <h1>Hi, I'm Waleed — <span id="typing"></span></h1>
-      <p class="lede">I'm a Chicago-based builder with a background in data &amp; decision sciences, hands-on AI and cloud project work, and a habit of designing for the person on the other end of the system.</p>
-      <p>I graduated from the University of Illinois Chicago with a B.S. in Information &amp; Decision Sciences and a minor in Computer Science, Dean's List both years. I'm fluent in Arabic, certified in AWS Cloud Foundations and Data Engineering, and currently working through the IBM Project Management Professional Certificate.</p>
-      <p>Right now I'm looking for a Product Manager or APM-track role — somewhere I can keep doing the kind of translation work below.</p>
+      <div class="kicker">About Me</div>
+      <h1>Hi, I'm Waleed!</h1>
+      <p class="lede">I'm a recent UIC graduate with a background in Information &amp; Decision Sciences and Computer Science, and I'm passionate about building technology that actually makes people's lives easier.</p>
+      <p>I like being somewhere between business and technology. I enjoy taking a messy problem, figuring out what people actually need, and turning that into a product or solution that works. Whether I'm building an AI-powered travel app, working with AWS, analyzing data, or brainstorming with a team, I'm always looking for ways to make things simpler, smarter, and more useful.</p>
+      <p>Outside of tech, you'll usually find me playing tennis or pickleball, exploring Chicago, trying new food, listening to live music, or finding something new to learn.</p>
+      <p>I'm currently looking for opportunities where I can combine my curiosity, technical background, and love for building to work on products and problems that matter.</p>
     </section>
 
     <section id="work" class="reveal">
@@ -209,26 +204,35 @@
         <div class="wlabel">Mobile · AI</div>
         <div>
           <h3>CultureBridge</h3>
-          <p>A Flutter + AWS mobile app for cross-cultural learning — cultural hubs, a language tool, destination quizzes, and an AI travel assistant powered by the Claude API, with DynamoDB on the backend.</p>
-          <div class="wtags"><span>Flutter</span><span>AWS DynamoDB</span><span>Claude API</span></div>
+          <p>A Flutter + AWS mobile app built to make cross-cultural travel easier. Includes cultural hubs, a language tool, destination quizzes, and an AI travel assistant powered by the Claude API, with DynamoDB supporting the backend.</p>
+          <div class="wtags"><span>Flutter</span><span>AWS DynamoDB</span><span>Claude API</span><span>IAM</span></div>
         </div>
       </div>
 
       <div class="work-item">
-        <div class="wlabel">IAM · Agents</div>
+        <div class="wlabel">Strategy · Consulting</div>
         <div>
-          <h3>Access Request Triage Agent</h3>
-          <p>Built for a Charles Schwab NERD program interview, then turned into a working demo — an agent that reasons through access requests against least-privilege, separation-of-duties, and audit-trail principles.</p>
-          <div class="wtags"><span>IAM</span><span>Anthropic API</span><span>Security</span></div>
+          <h3>Sustainability Strategy Consulting Project — Pariveda</h3>
+          <p>Led a six-person consulting team through a sustainability strategy project focused on helping a company improve its B Corp environmental and stakeholder impact scores. Conducted research, evaluated opportunities, and developed recommendations into a final strategy presentation.</p>
+          <div class="wtags"><span>Strategy</span><span>Research</span><span>Data Analysis</span><span>Consulting</span><span>Team Leadership</span></div>
         </div>
       </div>
 
       <div class="work-item">
-        <div class="wlabel">Agents · Tooling</div>
+        <div class="wlabel">Data · Mathematics</div>
+        <div>
+          <h3>Discrete Mathematics Table</h3>
+          <p>Built a visual and interactive table to explore concepts from discrete mathematics, turning abstract mathematical relationships into an easier way to understand and navigate key concepts.</p>
+          <div class="wtags"><span>Discrete Mathematics</span><span>Data Visualization</span><span>Problem Solving</span></div>
+        </div>
+      </div>
+
+      <div class="work-item">
+        <div class="wlabel">AI · Security</div>
         <div>
           <h3>Job Search Tracking Agent</h3>
-          <p>A from-scratch build on the Anthropic SDK, made to learn how an agent loop actually works — tool calls, state, memory — by tracking my own applications instead of reading about it secondhand.</p>
-          <div class="wtags"><span>Anthropic SDK</span><span>Agent Loops</span><span>Python</span></div>
+          <p>Built from scratch using the Anthropic SDK to understand how agent systems work in practice. The project uses tool calls, state, and memory to track and manage my own job applications.</p>
+          <div class="wtags"><span>Python</span><span>Anthropic SDK</span><span>Agent Loops</span><span>Tool Calling</span></div>
         </div>
       </div>
     </section>
@@ -301,8 +305,10 @@
           <ul>
             <li>AWS Cloud Foundations</li>
             <li>AWS Data Engineering</li>
-            <li>IBM PMP (in progress)</li>
+            <li>IBM Product Management (IP)</li>
+            <li>Google Cybersecurity Foundations (IP)</li>
             <li>Arabic — fluent</li>
+            <li>Kazakh — beginner</li>
           </ul>
         </div>
       </div>
@@ -342,29 +348,6 @@
     });
   }, {rootMargin:'-40% 0px -55% 0px'});
   sections.forEach(s=>navIO.observe(s));
-
-  // typing effect
-  const phrases = ["a builder who bridges systems and people.", "an aspiring Product Manager.", "fluent in English and Arabic."];
-  const typingEl = document.getElementById('typing');
-  let pIndex = 0, cIndex = 0, deleting = false;
-  function typeLoop(){
-    const current = phrases[pIndex];
-    if(!deleting){
-      cIndex++;
-      typingEl.textContent = current.slice(0, cIndex);
-      if(cIndex === current.length){ deleting = true; setTimeout(typeLoop, 1400); return; }
-    } else {
-      cIndex--;
-      typingEl.textContent = current.slice(0, cIndex);
-      if(cIndex === 0){ deleting = false; pIndex = (pIndex+1) % phrases.length; }
-    }
-    setTimeout(typeLoop, deleting ? 35 : 55);
-  }
-  if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    typeLoop();
-  } else {
-    typingEl.textContent = phrases[0];
-  }
 </script>
 
 </body>
