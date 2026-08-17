@@ -111,8 +111,26 @@
   }
   .work-item:last-child{border-bottom:1px solid var(--line);}
   .work-item .wlabel{font-size:12.5px; color:var(--muted); padding-top:2px;}
-  .work-item h3{font-size:17px; font-weight:600; margin-bottom:8px;}
+  .work-item h3{font-size:17px; font-weight:600; margin-bottom:4px;}
+  .work-item .wsub{color:var(--muted); font-size:13px; margin-bottom:12px;}
+  .work-item .wsub a{color:var(--accent);}
+  .work-item .wsub a:hover{text-decoration:underline;}
   .work-item p{color:var(--muted); font-size:14.5px; margin-bottom:12px; max-width:520px;}
+  .blist{list-style:none; margin-bottom:14px; max-width:540px;}
+  .blist li{
+    color:var(--muted);
+    font-size:14px;
+    padding-left:14px;
+    position:relative;
+    margin-bottom:7px;
+    line-height:1.55;
+  }
+  .blist li::before{
+    content:'–';
+    position:absolute;
+    left:0;
+    color:var(--accent);
+  }
   .wtags{display:flex; flex-wrap:wrap; gap:8px;}
   .wtags span{font-size:11.5px; color:var(--accent); border:1px solid var(--line); padding:3px 9px; border-radius:3px;}
 
@@ -201,38 +219,59 @@
       <h2>Projects</h2>
 
       <div class="work-item">
-        <div class="wlabel">Mobile · AI</div>
+        <div class="wlabel">Present</div>
         <div>
           <h3>CultureBridge</h3>
-          <p>A Flutter + AWS mobile app built to make cross-cultural travel easier. Includes cultural hubs, a language tool, destination quizzes, and an AI travel assistant powered by the Claude API, with DynamoDB supporting the backend.</p>
-          <div class="wtags"><span>Flutter</span><span>AWS DynamoDB</span><span>Claude API</span><span>IAM</span></div>
+          <div class="wsub">Travel Culture Learning App · <a href="https://github.com/whasan03/culturebridge" target="_blank" rel="noopener">GitHub</a></div>
+          <ul class="blist">
+            <li>Designing and developing a mobile platform enabling travelers to learn essential language phrases and cultural etiquette for over 50 destinations.</li>
+            <li>Implementing real-time translation and phrase recognition using Google ML Kit and external translation APIs.</li>
+            <li>Implementing an educational hub with articles and resources to promote cultural understanding, integrated via JavaScript and HTML/CSS.</li>
+            <li>Integrating AWS DynamoDB to store phrase datasets, user preferences, and cultural resources for content delivery.</li>
+          </ul>
+          <div class="wtags"><span>Flutter</span><span>AWS DynamoDB</span><span>Google ML Kit</span></div>
         </div>
       </div>
 
       <div class="work-item">
-        <div class="wlabel">Strategy · Consulting</div>
+        <div class="wlabel">Oct 2025 – Dec 2025</div>
         <div>
-          <h3>Sustainability Strategy Consulting Project — Pariveda</h3>
-          <p>Led a six-person consulting team through a sustainability strategy project focused on helping a company improve its B Corp environmental and stakeholder impact scores. Conducted research, evaluated opportunities, and developed recommendations into a final strategy presentation.</p>
-          <div class="wtags"><span>Strategy</span><span>Research</span><span>Data Analysis</span><span>Consulting</span><span>Team Leadership</span></div>
+          <h3>Strategy Consulting Project</h3>
+          <div class="wsub">Pariveda · Chicago, IL · Dr. Shahnaz Ibrahim</div>
+          <ul class="blist">
+            <li>Led an 8-person team in a growth strategy engagement to strengthen Pariveda's sustainability performance across Environment and Stakeholder pillars.</li>
+            <li>Conducted market research and ESG benchmarking to identify gaps and opportunities.</li>
+            <li>Presented strategic recommendations to client stakeholders, including Jaclyne Hertzfeld (Principal, Purposeful Profit) and Valerie Hall (Principal, Consulting Services).</li>
+          </ul>
+          <div class="wtags"><span>Strategy</span><span>ESG Benchmarking</span><span>Team Leadership</span></div>
         </div>
       </div>
 
       <div class="work-item">
-        <div class="wlabel">Data · Mathematics</div>
+        <div class="wlabel">Feb 2025</div>
         <div>
-          <h3>Discrete Mathematics Table</h3>
-          <p>Built a visual and interactive table to explore concepts from discrete mathematics, turning abstract mathematical relationships into an easier way to understand and navigate key concepts.</p>
-          <div class="wtags"><span>Discrete Mathematics</span><span>Data Visualization</span><span>Problem Solving</span></div>
+          <h3>AWS Hackathon — JAM Spring 2025</h3>
+          <div class="wsub">Amazon Web Services · Hosted by Craig Collenberg</div>
+          <ul class="blist">
+            <li>Designed serverless cloud workflows using AWS DynamoDB, EventBridge, and GenAI, automating data processing tasks for a sentiment analysis application.</li>
+            <li>Applied machine learning techniques to analyze customer data, delivering actionable insights for risk assessment.</li>
+            <li>Presented solutions to a panel of judges, demonstrating effective communication and technical expertise.</li>
+          </ul>
+          <div class="wtags"><span>AWS DynamoDB</span><span>EventBridge</span><span>GenAI</span></div>
         </div>
       </div>
 
       <div class="work-item">
-        <div class="wlabel">AI · Security</div>
+        <div class="wlabel">May 2023 – Aug 2023</div>
         <div>
-          <h3>Job Search Tracking Agent</h3>
-          <p>Built from scratch using the Anthropic SDK to understand how agent systems work in practice. The project uses tool calls, state, and memory to track and manage my own job applications.</p>
-          <div class="wtags"><span>Python</span><span>Anthropic SDK</span><span>Agent Loops</span><span>Tool Calling</span></div>
+          <h3>Data Analyst Internship</h3>
+          <div class="wsub">Transport Marketing Consultants · Orland Park, IL</div>
+          <ul class="blist">
+            <li>Developed and automated data integration workflows, improving reporting accuracy for client shipment compliance by 15%.</li>
+            <li>Implemented data validation scripts to streamline quality checks, reducing processing time by 20%.</li>
+            <li>Collaborated with cross-functional teams in an agile environment to troubleshoot data issues, ensuring timely delivery of client reports.</li>
+          </ul>
+          <div class="wtags"><span>Data Validation</span><span>Agile</span><span>Reporting</span></div>
         </div>
       </div>
     </section>
@@ -242,29 +281,27 @@
       <h2>Experience</h2>
 
       <div class="exp-item">
-        <div class="wlabel">Current</div>
+        <div class="wlabel">Aug 2022 – Present</div>
+        <div>
+          <h3>Swim Team Instructor &amp; Program Supervisor</h3>
+          <span class="org">Lifetime Fitness · Burr Ridge, IL</span>
+          <ul class="blist">
+            <li>Coordinated scheduling for 120+ swim programs.</li>
+            <li>Consistently ranked in the top 10% of instructors through strong client engagement and service delivery.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="wlabel">Dec 2022 – Jul 2026</div>
         <div>
           <h3>Product Operations Educator</h3>
-          <span class="org">Lululemon</span>
-          <p>Hands-on with ServiceNow for operational workflows; worked internally on guest support content optimization, translating operational processes into clearer guest-facing experiences.</p>
-        </div>
-      </div>
-
-      <div class="exp-item">
-        <div class="wlabel">Prior</div>
-        <div>
-          <h3>Program Supervisor &amp; Swim Coach</h3>
-          <span class="org">Lifetime Fitness</span>
-          <p>Supervised a team of swim instructors and grew enrollment specifically among Arabic-speaking members, using bilingual communication to close a gap standard program materials didn't cover.</p>
-        </div>
-      </div>
-
-      <div class="exp-item">
-        <div class="wlabel">Prior</div>
-        <div>
-          <h3>Data Analyst Intern</h3>
-          <span class="org">Transport Marketing Consultants</span>
-          <p>Early exposure to turning raw operational data into decisions — the starting point for the analytical thread running through my later coursework and projects.</p>
+          <span class="org">Lululemon · Chicago, IL</span>
+          <ul class="blist">
+            <li>Utilized RFID technology to consistently maintain 98%+ inventory accuracy, recognized as best in the Chicago region.</li>
+            <li>Trained and onboarded 10+ groups of new Educators on Back of House operations.</li>
+            <li>Utilized ServiceNow to coordinate and resolve operational issues, improving efficiency across the store.</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -305,10 +342,8 @@
           <ul>
             <li>AWS Cloud Foundations</li>
             <li>AWS Data Engineering</li>
-            <li>IBM Product Management (IP)</li>
-            <li>Google Cybersecurity Foundations (IP)</li>
+            <li>IBM PMP (in progress)</li>
             <li>Arabic — fluent</li>
-            <li>Kazakh — beginner</li>
           </ul>
         </div>
       </div>
